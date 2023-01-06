@@ -1,0 +1,25 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+
+        // Java program to check if a student number is valid
+        Scanner input = new Scanner(System.in);
+        System.out.print("Enter Email: ");
+        String Email = input.nextLine();
+
+        // Long method
+        String regex = "\\w+@students.national-u.edu.ph";
+        Pattern pattern = Pattern.compile(regex);
+
+      Matcher matcher = pattern.matcher(Email);
+
+        if (matcher.matches()) {
+            System.out.println("valid Email");
+        } else {
+            System.out.println("invalid Email");
+        }
+    }
+}
